@@ -58,7 +58,7 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             // IMPORTANT: Replace this with your Google Apps Script Web App URL
-            const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxM7dLmCtDay4I_unMkj6ys_6JamXZ94h7HbmTo_4HRvIe0vPoyZEtMUZUpJuXmqfCs/exec'; 
+            const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbx4kxj6t7iJR9MBBPFrbeJYLPWMdSkDofRAKJbBkPINlD8jSfI7ZKzMTIv_9avgRWyF/exec'; 
 
             const form = document.getElementById('secureForm');
             const messageInput = document.getElementById('messageInput');
@@ -87,7 +87,8 @@
                 try {
                     const response = await fetch(appsScriptUrl, {
                         method: 'POST',
-                        mode: 'no-cors', // Use 'no-cors' if you encounter CORS issues during local testing
+                        // Note: Removed mode: 'no-cors' here to allow the browser to
+                        // check and accept the CORS headers from the server.
                         headers: {
                             'Content-Type': 'application/json',
                         },
@@ -117,7 +118,7 @@
     </script>
 
     <script>
-        console.log('v 1.0');
+        console.log('v 1.1');
     </script>
 </body>
 </html>
